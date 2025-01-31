@@ -1,0 +1,57 @@
+@import "tailwindcss";
+/* Brutalism style */
+.brutalism {
+    border: 3px solid #ff1744;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8), -8px -8px 0 rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
+    margin-top: 3rem;
+  }
+  
+  .brutalism:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.8), -12px -12px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  .input-field {
+    border: 2px solid #ff1744;
+    padding: 1rem;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #00e676;
+    box-shadow: 0 0 5px #00e676;
+  }
+  
+  .submit-btn {
+    background-color: #ff1744;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #ff1744;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #ff4081;
+    border-color: #ff4081;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .link {
+    color: #00e676;
+    text-decoration: none;
+  }
