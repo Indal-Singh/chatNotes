@@ -91,6 +91,9 @@ const createTopic = (name, userId, callback) => {
     db.run('INSERT INTO topics (name, user_id) VALUES (?, ?)', [name, userId], callback);
 };
 
+const listTopic = (userId, callback) => {
+    db.all('SELECT * FROM topics WHERE user_id = ? ORDER BY id', [userId], callback);
+};
 
 module.exports = {
 connectDB, 
@@ -99,5 +102,6 @@ createUser,
 findUserByUsername,
 findUserById,
 getLastInsertId,
-createTopic
+createTopic,
+listTopic
 };

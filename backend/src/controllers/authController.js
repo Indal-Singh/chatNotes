@@ -32,7 +32,6 @@ const login = (req, res) => {
         if (!isMatch) return ApiResponse.error(res, 'Invalid credentials');
 
         const token = jwt.sign({ id: user.id }, config.JWT_SECRET, { expiresIn: '30d' });
-        res.cookie('token', token, { maxAge: 900000 });
         ApiResponse.success(res, 'Login successful', { token });
     });
 };
