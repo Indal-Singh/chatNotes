@@ -74,6 +74,10 @@ const createUser = (name, email, password, callback) => {
     const hashedPassword = bcrypt.hashSync(password, 10);
     db.run('INSERT INTO users (name,email, password) VALUES (?, ?, ?)', [name,email, hashedPassword], callback);
 };
+// Get the ID of the last created user
+const getLastInsertId = (callback) => {
+    db.get('SELECT last_insert_rowid() as id', [], callback);
+};
 
 const findUserByUsername = (email, callback) => {
     db.get('SELECT * FROM users WHERE email = ?', [email], callback);
@@ -83,7 +87,9 @@ const findUserById = (id,callback) =>{
     db.get('SELECT * FROM users WHERE id = ?',[id],callback);
 }
 
-
+const createTopic = (name, userId, callback) => {
+    db.run('INSERT INTO topics (name, user_id) VALUES (?, ?)', [name, userId], callback);
+};
 
 
 module.exports = {
@@ -91,5 +97,7 @@ connectDB,
 createTables, 
 createUser,
 findUserByUsername,
-findUserById
+findUserById,
+getLastInsertId,
+createTopic
 };
